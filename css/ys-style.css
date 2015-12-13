@@ -1,0 +1,77 @@
+
+.ys-str-display
+{
+    padding: 12px;
+    min-height: 80px;
+    overflow: hidden;
+    display: block;
+}
+.ys-str-display li
+{
+    list-style: none;
+
+}
+
+
+.ys_avatar  img {
+    width: 80px;
+    max-width: 100%;
+    margin-right: 2%;
+    float: left;
+
+}
+
+.bloc
+{float: left;
+padding: 0;}
+
+.bloc h4
+{  margin: 0!important;}
+
+.bloc-2
+{float: right;
+padding: 0;}
+
+.bloc-3
+{clear: both;
+padding: 0;
+text-align: center;
+font-weight: bold;
+font-size: 1.5em;}
+/*
+x
+.ys_profile_details
+{
+
+}
+
+.ys_profile
+{
+    padding: 2%;
+    float: left;
+}
+
+.ys_description
+{
+    padding: 2%;
+    float: left;
+}
+
+.ys_post_date
+{
+    padding: 2%;
+    float: right;
+}
+
+.ys_user_role
+{
+    padding: 2%;
+    float: left;
+    clear: both;
+
+}
+
+.ys_previous_posts
+{
+
+}*/
