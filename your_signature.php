@@ -28,25 +28,14 @@ require_once( dirname(__FILE__) . '/ys_display.php' );
 *default setting options
 */
 function ys_display_settings() {
+
     $current_displayed_style = array(
-        'profile_current_background'	=> '#AB3F3F',
-        'profile_current_border'		=> '#ffffff',
-        'profile_current_color'			=> '#000000',
+        'profile_current_background'	=> '#ffffff',
+        'profile_current_border'		=> '#cccccc',
+        'profile_current_color'			=> '#888888',
     );
 
-    $custom_post_types_display_settings = array();
 
-    $args = array(
-        'public'   => true,
-        '_builtin' => false
-    );
-    $output = 'names';
-    $operator = 'and';
-    $custom_post_types = get_post_types( $args, $output, $operator );
-
-    //foreach ( $custom_post_types  as $custom_post_type ) {
-     //$custom_post_types_display_settings['show_in_' . $custom_post_type] = ( 'below' );
-   // }
 
     $current_displayed_style = array_merge( $current_displayed_style);
 
@@ -105,38 +94,34 @@ function ys_styles_scripts(){
 add_action('wp_enqueue_scripts','ys_styles_scripts');
 
 
-function ys_insert_color_settings() {
-
-
-    $options = ys_display_settings();
-
-    $current_colors = array(
-
-        $options['profile_current_background'],
-        $options['profile_current_border'],
-        $options['profile_current_color'],
-    );
-
-    ?>
-    <style>
-        .ys-str-display { background-color: <?php echo $options['profile_current_background']; ?>; border: 2px solid <?php echo $options['profile_current_border']; ?>; color: <?php echo $options['profile_current_color']; ?>; }
-    </style>
-    <?php
-
-}
-add_action( 'wp_head', 'ys_insert_color_settings' );
-
-
-/**
- * Checks if a string is a URL
-
- */
-
-function ys_is_url( $string )
+function ys_insert_color_settings()
 {
-    if (substr($string, 0, 4) === 'http') {
-        return true;
-    }
+    $options = ys_display_settings();
+        ?>
 
-    return false;
+        <style>
+            .ys-str-display {
+                background-color: <?php echo $options['profile_current_background']; ?>;
+                border: 2px solid <?php echo $options['profile_current_border']; ?>;
+                color: <?php echo $options['profile_current_color']; ?>;
+            }
+        </style>
+        <?php
+
+
 }
+    add_action('wp_head', 'ys_insert_color_settings');
+
+
+    /**
+     * Checks if a string is a URL
+     */
+
+    function ys_is_url($string)
+    {
+        if (substr($string, 0, 4) === 'http') {
+            return true;
+        }
+
+        return false;
+    }

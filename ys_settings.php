@@ -15,7 +15,7 @@ function your_sign_admin_actions() {
         __FILE__,
         'ys_show_admin_actions'
     );
-    add_action( 'admin_print_styles-' . $your_sign_admin_actions, 'ys_admin_scripts' );
+    add_action( 'your_sign_admin_actions', 'ys_admin_scripts' );
 }
 add_action( 'admin_menu', 'your_sign_admin_actions' );
 
@@ -73,9 +73,6 @@ function ys_plugin_options() {
     );
 }
 
-
-
-
 /**
  *color settings callback
  */
@@ -97,7 +94,7 @@ function ys_colorpicker_callback( $args ) {
             <input id="show_in_posts" name="ys_settings_display[show_in_posts]" type="hidden" value="below"/>
             <input type="text" id="<?php echo $field; ?>" name="ys_settings_display[<?php echo $field; ?>]" class="your_sign-color-input"  value="<?php echo $options[$field]; ?>" />
 			<span class="description"><?php echo $value; ?></span>
-            <a href="#" id="<?php echo $field; ?>" class="color-field"</a>
+            <a href="#" id="<?php echo $field; ?>" class="color-field"></a>
 		</span><br />
     <?php }
 
@@ -118,7 +115,6 @@ function ys_show_admin_actions() { ?>
 
     <?php settings_errors(); ?>
 
-    <?php $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'display_settings'; ?>
 
     <div id="poststuff">
         <div id="post-body" class="columns-2">
@@ -127,7 +123,6 @@ function ys_show_admin_actions() { ?>
                     <?php
                     settings_fields( 'ys_settings_display' );
                     do_settings_sections( 'ys_settings_display' );
-                    echo '<a id="your_sign-reset-colors" href="#" style="margin:15px 0 0 230px;display:inline-block">' . __( 'Reset all color settings', 'your_sign' ) . '</a>';
                     submit_button();
                     ?>
                 </form>
