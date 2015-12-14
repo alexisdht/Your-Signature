@@ -44,15 +44,15 @@ function ys_display_profile($userid= '' ) {
 
     $ys_show_profile .= '
 		</li>
-   			<li class="ys_user_role">' . implode(',',$user_info->roles). '</li>
+   			<li class="ys_user_role">' . implode (',',$user_info->roles). '</li>
    			</ul>
 
 
         <ul class="bloc-2">
 
-			<li class="ys_post_date">' .date_i18n( get_option( 'date_format' ), get_the_time( 'U' ) ) .'</li>
+			<li class="ys_post_date">' .date_i18n( get_option ( 'date_format' ), get_the_time( 'U' ) ) .'</li>
 
-			<li class="ys_previous_posts"><a href="' . get_author_posts_url( $author->ID ) . '" rel="nofollow">' . __( 'previous posts', 'your_sign' ) . '</a></li>
+			<li class="ys_previous_posts"><a href="' . get_author_posts_url( $author->ID ) . '" rel="nofollow">' . __( 'previous posts', 'ys-trad' ) . '</a></li>
         </ul>
 
  			<div class="ys_description bloc-3" >"'. $author->user_description.'"</div>

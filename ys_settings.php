@@ -45,7 +45,7 @@ function ys_plugin_options() {
     // Add Display Settings section
    add_settings_section(
         'ys_colors_settings',
-        __( '', 'your_sign' ),
+        __( 'Parameters', 'ys_trad' ),
         'ys_color_settings_callback',
         'ys_settings_display'
     );
@@ -53,16 +53,16 @@ function ys_plugin_options() {
 
     add_settings_field(
         'show_in_posts',
-        __( 'Color Selector', 'your_sign' ),
+        __( 'Color Selector', 'ys_trad' ),
         'ys_colorpicker_callback',
         'ys_settings_display',
         'ys_colors_settings',
         array(
             'profile_current',
             array(
-                '_background'	=> __( 'Background', 'your_sign' ),
-                '_border'		=> __( 'Border', 'your_sign' ),
-                '_color'		=> __( 'Color', 'your_sign' )
+                '_background'	=> __( 'Background', 'ys_trad' ),
+                '_border'		=> __( 'Border', 'ys_trad' ),
+                '_color'		=> __( 'Color', 'ys_trad' )
             )
         )
     );

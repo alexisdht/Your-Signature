@@ -12,6 +12,11 @@
 
 }
 
+.ys-str-display a
+{
+color:inherit;
+
+}
 
 .ys_avatar  img {
     width: 80px;

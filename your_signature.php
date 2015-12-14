@@ -6,14 +6,17 @@ Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
 Description: Personalize your Youtube insertion
 Version: 1.0
 Author: Alexis
-Author URI: http://URI_Of_The_Plugin_Author
+Text Domain: ys_trad_
 License: A "Slug" license name e.g. GPL2
 */
-defined( 'ABSPATH' ) or die( 'Access Prohibited' );
+defined( 'ABSPATH' ) or die ( 'Access Prohibited' );
 
-function trad_plugin() {
-    trad_plugin( 'your_sign', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
-}
+/*function trad_plugin() {
+    trad_plugin( 'ys_trad_', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+}*/
+
+// Load text domain
+load_plugin_textdomain( 'ys_trad', false, plugin_basename(dirname(__FILE__)).'/languages' );
 
 // Plugin and user settings
 if ( is_admin() ) {
@@ -111,17 +114,3 @@ function ys_insert_color_settings()
 
 }
     add_action('wp_head', 'ys_insert_color_settings');
-
-
-    /**
-     * Checks if a string is a URL
-     */
-
-    function ys_is_url($string)
-    {
-        if (substr($string, 0, 4) === 'http') {
-            return true;
-        }
-
-        return false;
-    }

@@ -22,6 +22,10 @@ msgstr "Publications antérieures"
 msgid "Color Selector"
 msgstr "Selecteur de couleur"
 
+#: ys_settings.php:48
+msgid "Parameters"
+msgstr "Paramètres"
+
 #: ys_settings.php:63
 msgid "Background"
 msgstr "Fond"
